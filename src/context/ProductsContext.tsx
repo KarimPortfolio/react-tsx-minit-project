@@ -140,9 +140,7 @@ export default function ProductsContext({ children }: productProvideProps) {
         }
     }
 
-    return (
-    <myProductContext.Provider
-      value={{
+    const value = {
         products,
         setProducts,
         product,
@@ -155,8 +153,10 @@ export default function ProductsContext({ children }: productProvideProps) {
         setMessage,
         addProduct,
         deleteProduct
-      }}
-    >
+    };
+
+    return (
+    <myProductContext.Provider value={value} >
       {children}
     </myProductContext.Provider>
   );
